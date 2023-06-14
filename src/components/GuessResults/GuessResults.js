@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { range } from '../../utils';
 import { NUM_OF_GUESSES_ALLOWED, LENGTH_OF_WORDS } from '../../constants'
 

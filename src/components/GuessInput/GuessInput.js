@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { WIN, LOSE } from '../../constants'
 
 
-function GuessInput({handleGuess, result, answer}) {
+function GuessInput({handleGuess, handleReset, result, answer}) {
     const [guess, setGuess] = useState('')
 
   return (
@@ -34,11 +34,23 @@ function GuessInput({handleGuess, result, answer}) {
                 <p>
                     <strong>Congratulations!</strong> Got it in <strong>{result.guesses} guesses</strong>.
                 </p>
+                <button
+                  className='reset-button'
+                  onClick={() => handleReset()}
+                >
+                    Reset
+                </button>
             </div>
         }
         {result.value == LOSE &&
             <div className="sad banner">
                 <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
+                <button 
+                  className='reset-button'
+                  onClick={() => handleReset()}
+                >
+                    Reset
+                </button>
             </div>
         }
     </>
